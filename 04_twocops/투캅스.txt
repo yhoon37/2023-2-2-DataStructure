@@ -1,0 +1,155 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+class Point {
+public:
+    Point(int x, int y) : x(x), y(y) {}
+    int x;
+    int y;
+
+    bool operator ==(Point other){
+        if(other.x = x && other.y == y) return true;
+        else return false;
+    }
+
+private:
+};
+
+ostream& operator <<(ostream& os, Point p){
+    os << p.x << " " << p.y;
+    return os;
+}
+
+class Cop {
+public:
+    list<Point>::iterator start;
+    list<Point>::iterator next;
+    list<Point>::iterator begin;
+    list<Point>::iterator end;
+    list<Point>::iterator last;
+    Point position;
+    bool direction;
+
+    Cop(bool direction, list<Point>::iterator start, list<Point>::iterator begin, list<Point>::iterator end) :
+        direction(direction), start(start), begin(begin), end(end), position(*start){last = end--; end++;}
+
+//    void change_next(){
+//        start = next;
+//        if(direction) next = start++;   //다음으로 갈 점 구하기
+//        else next = start--;
+//    }
+
+
+    void go(){
+        if(direction) {
+            if(start == last) {
+                next = begin;
+            }
+            else{
+                next = start++;
+                start--;
+            }                               //다음으로 갈 점 구하기
+        }
+        else {
+            if(start == begin){
+                next = last;
+            }
+            else {
+                next = start--;
+                start++;
+            }
+        }
+
+        if(next->x == position.x) {
+            cout << *next << endl;
+            if(position.y < next->y){
+                position.y++;
+                cout << "1" << endl;
+            }
+            else {
+                position.y--;
+                cout << "2" << endl;
+            }
+        }
+        else {
+            if(position.x < next->x) {
+                position.x++;
+                cout << "3" << endl;
+            }
+            else {
+                position.x--;
+                cout << "4" << endl;
+            }
+        }
+
+        if(*next == position) start = next;
+    }
+
+    void change_direction() {direction =! direction;}
+    //Point get_position() {return position;}
+
+private:
+};
+
+int main() {
+    int k, x, y, time;
+    list<Point> points;
+    list<Point>::iterator cop1_start, cop2_start;
+
+    cin >> k;
+
+    for(int i=0; i<k; i++) {
+        cin >> x >> y;
+        Point new_point = Point(x,y);
+        points.push_back(new_point);
+    }
+
+    for(auto i : points) cout << i << endl;
+
+    cop1_start = points.begin();
+    cop2_start = points.begin();
+    for(int i=0; i < k/2 - 1; i++) cop2_start++;
+    //cop2_next = points.begin() + k/2 + 1;
+
+    Cop cop1(true, cop1_start, points.begin(), points.end());
+    //Cop cop2(*(points.begin() + k/2) , false);
+    Cop cop2(false, cop2_start, points.begin(), points.end());
+    //cop2_next++;
+    cin >> time;
+
+    while(time > 0) {
+        cout << time << endl;
+        cout << cop1.position << endl;
+        cout << cop2.position << endl;
+        cout << "-----------------------------" << endl;
+        cop1.go();
+        cop2.go();
+
+        if(cop1.position == cop2.position) {
+            cop1.change_direction();
+            cop2.change_direction();
+        }
+
+//        if(cop1.position == *cop1_next) {
+//                if(cop1.direction){
+//                    cop1_next++;
+//                }
+//                else{
+//                    cop1_next--;
+//                }
+//        }
+//        if(cop2.position == *cop2_next) {
+//            if(cop2.direction) {
+//                cop2_next++;
+//            }
+//            else {
+//                cop2_next--;
+//            }
+//        }
+        time--;
+    }
+    cout << cop1.position << endl;
+    cout << cop2.position << endl;
+}

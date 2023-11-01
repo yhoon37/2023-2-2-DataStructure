@@ -1,0 +1,6 @@
+5 3
+Newbury	T	17	120.46	14
+South	T	5	93.01	11
+Guthrie	T	5	205.32	10
+Vaughan	D	19	299.61	16
+Brooks	B	10	218.49	11

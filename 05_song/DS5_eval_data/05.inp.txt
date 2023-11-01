@@ -1,0 +1,26 @@
+25 22
+Newbury	D	19	139.66	14
+South	B	19	93.01	11
+Guthrie	T	3	134.45	11
+Vaughan	B	4	45.91	12
+Brooks	T	10	31.52	18
+Legge	T	12	151.15	12
+Freight	H	9	146.78	18
+Earley	D	12	142.6	11
+Sharp	B	14	110.37	15
+Welton	H	8	120.46	11
+Elliston	D	15	213.38	19
+Chambers	B	17	191.02	14
+Brooker	B	7	205.32	13
+Yarwood	T	12	190.08	11
+Leith	T	5	258.48	14
+Pickthall	T	12	24.92	12
+Acton	T	3	218.49	17
+Gilmore	H	17	110.27	11
+Kelliher	B	15	65.52	14
+Timms	T	13	134.98	16
+Morley	P	19	81.32	17
+Smythe	D	6	137.82	17
+Gerard	P	5	69.41	19
+Hutchison	P	5	216.5	17
+Peach	B	17	299.61	10

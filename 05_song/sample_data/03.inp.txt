@@ -1,0 +1,16 @@
+15 15
+Gibson	T	31	24.58	68
+Lespaul	T	34	15.12	97
+SG	D	34	12.01	31
+Explore	T	34	21.38	97
+Fender	P	31	26.51	59
+Stratoc	H	31	16.8	42
+Telecas	T	33	10.74	94
+JazzMas	H	30	10.77	98
+Squier	D	31	16.1	33
+Ephipho	B	31	23.23	68
+PRS	P	34	12.33	57
+IBanez	P	30	25.05	28
+SuperSt	B	34	17.1	56
+ESP	B	31	29.25	33
+LTD	H	32	20.62	83
